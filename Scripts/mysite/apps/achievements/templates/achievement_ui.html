@@ -1,0 +1,25 @@
+﻿{% load i18n %}
+{% load humanize %}
+
+<script type="text/javascript">
+
+function load_category(id) {
+    $('#achievement_items').load('/achievements/ajax_items/' + id);
+}
+
+</script>
+
+<div id="achievement_ui">
+    <div id="achievement_groups">
+    
+        <ul>
+            {% for category in categories %}
+                <li><a href=# onclick='load_category({{ category.id }});return false'>{{ category.name }}</a></li>
+            {% endfor %}            
+        </ul>
+    
+    </div>    
+    <div id="achievement_items">
+        <p>Välj en kategori till vänster.</p>
+    </div>
+</div>        

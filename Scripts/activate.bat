@@ -1,5 +1,5 @@
 @echo off
-set VIRTUAL_ENV=c:\Users\Daniel\My Documents\achievement_tracker\mysite-env
+set VIRTUAL_ENV=C:\Users\Daniel\Documents\mysite-env
 
 if not defined PROMPT (
     set PROMPT=$P$G

@@ -1,0 +1,13 @@
+Missions:
+{% for mission in missions %}
+    <div>
+    {% if mission in completed_missions %}
+        <b>BEEN THERE DONE DAT</b>
+    {% else %}
+        <b>Nope</b>
+    {% endif %}
+    {{ mission.description }}
+    </div>
+{% empty %}
+<p>Finns inga uppdrag under denna kategori.</p>
+{% endfor %}

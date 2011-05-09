@@ -39,8 +39,10 @@ h1 {
 #body {
     clear: both;
     margin: 0 auto;
-    padding: 10px;
-    width: 800px;
+    padding: 5px 22px;
+    padding-bottom: 50px;
+    width: 776px;
+    background: #fff url('../img/shadow_body_bg.png');
 }
 #footer {
     color: #999; /* footer text colour */
@@ -86,32 +88,38 @@ h1 {
 
 
 /* HEADER */
-
+#tabhead-wrapper {
+    background: #f0f0f0;
+    position: relative;
+}
 #tabhead {
-    background: #035 url('../img/heading.png') left top repeat-x;
-    border-bottom: 1px solid #000; /* tab border */
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 800px;    
     position: relative;
 }
 #tabhead .logo {
-    height: 80px;
-    padding-left: 5px;
-    padding-top: 0;    
+    padding: 0;
 }
 #tabhead .logo img {
-    width: 190px;
-    height: 79px;
 }
 #tabhead .login {
     position: absolute;
     top: 6px;
     right: 15px;
-    color: #DEF; /* login bar text colour */
+    color: #333; /* login bar text colour */
 }
 #tabhead .login a, #tabhead .login a:visited {
-    color: #DEF; /* login bar link colour */
+    color: #22F; /* login bar link colour */
 }
 #tabhead .login a:hover {
     color: #FFF; /* login bar link hover colour */
+}
+
+#headborder {
+    height: 19px;
+    background: #595959 url('../img/top.png') no-repeat top center;
+
 }
 
 #locale_switcher {
@@ -120,9 +128,11 @@ h1 {
 
 #subnav {
     margin: 0;
+    margin-bottom: 10px;
     padding: 0;
-    background: #DEF; /* tab colour */
+    background: #f0f0f0; /* tab colour */
     border-bottom: 1px solid #9BC;
+    
 }
 #subnav ul {
     float: right;

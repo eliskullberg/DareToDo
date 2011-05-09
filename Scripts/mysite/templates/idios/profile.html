@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load uni_form_tags %}
 {% load account_tags %}
+{% load achievement_tags %}
 
 {% block head_title %}{% user_display other_user as other_user_display %}{% blocktrans %}Profile for {{ other_user_display }}{% endblocktrans %}{% endblock %}
 
@@ -29,8 +30,12 @@
             {% if other_user.get_profile.website %}<p><b>{% trans "Website" %}</b>: <a class="url" href="{{ other_user.get_profile.website }}">{{ other_user.get_profile.website }}</a></p>{% endif %}
         </div>
 
-        <div class="achievement_list">
-        
+    </div><!--/vcard-->
+
+    {% if is_me %}
+        {% achievement_ui other_user.get_profile.completed_missions.all %}
+    {% else %}
+        <div class="achievement_list">        
         {% regroup other_user.get_profile.completed_missions.all by category as category_list %}
         {% for category in category_list %}
             <div class="mission-group">
@@ -44,12 +49,11 @@
                     </div>
                 {% endfor %}
             </div>
-        {% endfor %}
-        
+        {% endfor %}    
         </div>
+    {% endif %}
         
         
-    </div><!--/vcard-->
 {% endblock %}
 
 

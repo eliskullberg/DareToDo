@@ -2,7 +2,7 @@
 
 <form class="uniForm" method="POST" action="{% url profile_edit %}">
     {% csrf_token %}
-    <fieldset class="inlineLabels">
+    <fieldset>
         {{ profile_form|as_uni_form }}
         <div class="form_block">
             <input type="submit" value="update" />

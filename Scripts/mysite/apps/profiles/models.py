@@ -10,4 +10,5 @@ class Profile(ProfileBase):
     location = models.CharField(_("location"), max_length=40, null=True, blank=True)
     website = models.URLField(_("website"), null=True, blank=True, verify_exists=False)
 
-    completed_missions = models.ManyToManyField(Mission, verbose_name="list of completed missions")
+    completed_missions = models.ManyToManyField(Mission, verbose_name="list of completed missions", 
+                                                editable=False)
