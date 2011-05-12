@@ -1,0 +1,83 @@
+#achievement_groups {
+    width: 120px;
+    float: left;
+}
+
+#achievement_groups ul{
+    padding: 0;
+    padding-top: 5px;
+    margin: 0;
+    list-style: none;
+}
+
+#achievement_groups li{
+    line-height: 2em;
+    background: #779ce0;
+    margin-bottom: 3px;
+    padding: 5px;
+    list-style: none;
+}
+
+#achievement_groups li a{
+    color: white;
+    text-decoration: none;
+}
+
+#achievement_groups li.selected {
+    background: #0d5ae8 url('../img/achi_sel_corner.png') no-repeat right top;
+}
+
+#achievement_items {
+    margin-left: 120px;
+    background: #e0e0e0;
+    padding: 10px;
+    min-height: 100px;
+    border-radius: 2px;
+}
+
+#achievement_items p {
+    margin: 0;
+}
+
+#achievement_ui #loading_notification span, #achievement_ui #loading_notification img{
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+
+.mission_item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.mission_not_completed{
+    background: #ececec;
+    border: 1px solid #ccc;
+}
+
+.mission_completed{
+    background: #4adb58;
+}
+
+.mission_item img, .mission_item span.description {
+    vertical-align: middle;
+}
+
+.mission_item span.description {
+    font-weight: bold;
+}
+
+.options {
+    text-align: right;
+    cursor: default;
+    display: none;
+    background: white;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.unfolded .options {
+    display: block;
+}

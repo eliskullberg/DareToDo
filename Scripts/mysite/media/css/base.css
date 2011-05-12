@@ -42,14 +42,15 @@ h1 {
     padding: 5px 22px;
     padding-bottom: 50px;
     width: 776px;
-    background: #fff url('../img/shadow_body_bg.png');
+    background: #fff url('../img/shadow_body_bg2.png') no-repeat;
 }
 #footer {
     color: #999; /* footer text colour */
     margin: 50px auto;
     padding: 10px;
     clear: both;
-    width: 800px;
+    width: 780px;
+    border-top: 1px solid #ccc;
 }
 #footer a, #footer a:visited {
     color: #444; /* footer link colour */
@@ -116,9 +117,15 @@ h1 {
     color: #FFF; /* login bar link hover colour */
 }
 
+#headborder-wrapper {
+    background: #595959;
+}
 #headborder {
+    width: 820px;
+
     height: 19px;
-    background: #595959 url('../img/top.png') no-repeat top center;
+    background: #595959 url('../img/top.png') no-repeat top left;
+    margin: 0 auto;
 
 }
 

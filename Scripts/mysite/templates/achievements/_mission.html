@@ -1,0 +1,11 @@
+<div class="mission_item mission_not_completed">
+
+    <img src="/site_media/static/img/silk/icons/bullet_go.png" />
+    <span class="description">{{ mission.description }}</span>
+
+    <div class="options" onclick="return false">
+        <span>Klicka på knappen nedan om du utfört denna bedrift.</span>    
+        <input type="button" onclick="register_completed('#mission_container_{{ mission.id }}', {{ mission.id }})" value="Been there done dat!" />
+    </div>
+
+</div>

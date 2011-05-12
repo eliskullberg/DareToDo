@@ -1,0 +1,18 @@
+﻿{% load i18n %}
+
+<div class="achievement_list">        
+{% regroup completed_missions by category as category_list %}
+{% for category in category_list %}
+    <div class="mission-group">
+        <h3>{{ category.grouper }}</h3>
+        {% for mission in category.list %}
+            <div class="mission-item">
+                <div class="name">
+                    &bull; {{ mission.description }}
+                </div>
+                <div class="clear"></div>
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}    
+</div>

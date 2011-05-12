@@ -1,7 +1,7 @@
 ﻿from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import smart_unicode
-
+from django.contrib.auth.models import User
 
 class MissionCategory(models.Model):
 
@@ -19,4 +19,7 @@ class Mission(models.Model):
     description = models.CharField(_("description"), max_length=150, null=False, blank=False)
     category = models.ForeignKey(MissionCategory)
     
-    
+class UserAchievements(models.Model):
+
+    user = models.OneToOneField(User)
+    completed_missions = models.ManyToManyField(Mission, verbose_name="list of completed missions")

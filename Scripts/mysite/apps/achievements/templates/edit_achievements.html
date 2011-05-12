@@ -1,0 +1,43 @@
+﻿{% load i18n %}
+<script type="text/javascript">
+
+function load_category(id) {    
+    var loading_html = '<div id="loading_notification"><p><img src="/site_media/static/img/loading.gif" /><span> Laddar...</span></p></div>';
+    var $items = $('#achievement_items');
+    $items.html(loading_html);
+        
+    $items.load('/achievements/ajax_items/' + id, function() {   
+        $('.mission_item').click(function() {
+            $(this).toggleClass('unfolded');    
+        });
+        $('.mission_item .options').click(function() { return false; });
+    });    
+    
+    $('#achievement_groups li').removeClass('selected');
+    $('#achievement_category_' + id).addClass('selected');
+}
+
+function register_completed(container, id) {
+    $(container).load('/achievements/ajax_register_completed/' + id);
+}
+
+function undo_completed(container, id) {
+    $(container).load('/achievements/ajax_undo_completed/' + id);
+}
+
+</script>
+<div id="achievement_ui">
+    <div id="achievement_groups">
+    
+        <ul>
+            {% for category in categories %}
+                <li id="achievement_category_{{ category.id }}"><a href=# onclick='load_category({{ category.id }});return false'>{{ category.name }}</a></li>
+            {% endfor %}            
+        </ul>
+    
+    </div>    
+    <div id="achievement_items">
+        <p>Välj en kategori till vänster.</p>
+        
+    </div>    
+</div>        

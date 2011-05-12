@@ -1,12 +1,10 @@
-Missions:
 {% for mission in missions %}
-    <div>
+    <div id="mission_container_{{ mission.id }}">  
     {% if mission in completed_missions %}
-        <b>BEEN THERE DONE DAT</b>
+        {% include "achievements/_completed_mission.html" %}
     {% else %}
-        <b>Nope</b>
+        {% include "achievements/_mission.html" %}
     {% endif %}
-    {{ mission.description }}
     </div>
 {% empty %}
 <p>Finns inga uppdrag under denna kategori.</p>
