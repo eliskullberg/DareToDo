@@ -1,0 +1,11 @@
+{% for mission in missions %}
+    <div id="mission_container_{{ mission.id }}">  
+    {% if mission in completed_missions %}
+        {% include "achievements/_display_completed_mission.html" %}
+    {% else %}
+        {% include "achievements/_display_mission.html" %}
+    {% endif %}
+    </div>
+{% empty %}
+<p>There are no missions in this category.</p>
+{% endfor %}
