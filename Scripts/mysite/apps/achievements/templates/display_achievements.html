@@ -1,18 +1,46 @@
 ﻿{% load i18n %}
+<script type="text/javascript">
+var loading_html = '<div id="loading_notification"><p><img src="/site_media/static/img/loading.gif" /><span> Loading...</span></p></div>';
 
-<div class="achievement_list">        
-{% regroup completed_missions by category as category_list %}
-{% for category in category_list %}
-    <div class="mission-group">
-        <h3>{{ category.grouper }}</h3>
-        {% for mission in category.list %}
-            <div class="mission-item">
-                <div class="name">
-                    &bull; {{ mission.description }}
-                </div>
-                <div class="clear"></div>
-            </div>
-        {% endfor %}
-    </div>
-{% endfor %}    
-</div>
+function load_category(id) {    
+    var $items = $('#achievement_items');
+    $items.html(loading_html);
+        
+    $items.load('/achievements/ajax_items/' + id + '?user_id={{ user_id }}', function() {   
+        $('.mission_item').click(function() {
+            $(this).toggleClass('unfolded');    
+        });
+        $('.mission_item .options').click(function() { return false; });
+    });    
+    
+    $('#achievement_groups li').removeClass('selected');
+    $('#achievement_category_' + id).addClass('selected');
+}
+
+function load_overview() {    
+    $('#achievement_items')
+        .html(loading_html)        
+        .load('/achievements/ajax_overview');    
+    
+    $('#achievement_groups li').removeClass('selected');
+    $('#achievements_overview').addClass('selected');
+}
+
+</script>
+<div id="achievement_ui">
+    <div id="achievement_groups">
+    
+        <ul>
+            <li id="achievements_overview"><a href=# onclick='load_overview();return false'>Overview</a></li>
+            {% for category in categories %}
+                <li id="achievement_category_{{ category.id }}"><a href=# onclick='load_category({{ category.id }});return false'>{{ category.name }}</a></li>
+            {% endfor %}            
+        </ul>
+    
+    </div>    
+    <div id="achievement_items">        
+    </div>    
+</div>        
+<script type="text/javascript">
+load_overview();
+</script>

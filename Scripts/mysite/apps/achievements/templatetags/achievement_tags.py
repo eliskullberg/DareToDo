@@ -10,7 +10,7 @@ register = template.Library()
 def edit_achievements(user):        
     try:
         achievements = UserAchievements.objects.get(user=user)
-        completed_missions = achievements.completed_missions.all
+        completed_missions = achievements.completed_missions.all()
     except UserAchievements.DoesNotExist:
         completed_missions = []
     
@@ -21,9 +21,11 @@ def edit_achievements(user):
 def display_achievements(user):
     try:
         achievements = UserAchievements.objects.get(user=user)
-        completed_missions = achievements.completed_missions.all
+        completed_missions = achievements.completed_missions.all()
     except UserAchievements.DoesNotExist:
         completed_missions = []
 
-    return {"completed_missions": completed_missions}
+    return {"categories": MissionCategory.objects.all(),
+            "completed_missions": completed_missions,
+            "user_id": user.id}
 

@@ -18,7 +18,7 @@
     {% if user.is_authenticated %}
         <ul class="tabs">{% spaceless %}
             <li id="tab_profile"><a href="{% url profile_detail user.username %}">{% trans "Profile" %}</a></li>
-            <li id="tab_profile"><a href="{% url profile_list %}">{% trans "Andra användare" %}</a></li>
+            <li id="tab_profile"><a href="{% url profile_list %}">{% trans "Other users" %}</a></li>
         {% endspaceless %}</ul>
     {% endif %}
 {% endblock %}

@@ -23,6 +23,7 @@ urlpatterns = patterns("",
     url(r"^openid/(.*)", PinaxConsumer()),
     url(r"^profiles/", include("idios.urls")),
     url(r"^notices/", include("notification.urls")),
+    url(r'^avatar/', include('avatar.urls')),
     url(r"^announcements/", include("announcements.urls")),
 )
 

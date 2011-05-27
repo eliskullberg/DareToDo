@@ -31,7 +31,7 @@
     margin-left: 120px;
     background: #e0e0e0;
     padding: 10px;
-    min-height: 100px;
+    min-height: 180px;
     border-radius: 2px;
 }
 
@@ -49,6 +49,9 @@
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
+}
+
+.unfoldable_item {
     cursor: pointer;
 }
 
@@ -61,12 +64,18 @@
     background: #4adb58;
 }
 
-.mission_item img, .mission_item span.description {
+.mission_item img {
     vertical-align: middle;
 }
 
 .mission_item span.description {
+    vertical-align: middle;
     font-weight: bold;
+}
+
+.mission_item span.points {
+    vertical-align: middle;
+    float: right;
 }
 
 .options {
@@ -80,4 +89,9 @@
 
 .unfolded .options {
     display: block;
+}
+
+.real-life-level {
+    font-size: 1.5em;
+    font-weight: bold;
 }

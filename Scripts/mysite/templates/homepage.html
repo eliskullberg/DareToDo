@@ -8,25 +8,24 @@
 {% block body_class %}home{% endblock %}
 
 {% block body %}
+
+    <div style="border-bottom:1px solid #ccc; padding: 20px;margin-bottom: 30px " class="clearfix">
+        <div style="float:left; width: 100px; height: 100px; border:1px solid black">
+        abc
+        </div>
+        
+        <div style="margin-left:140px; padding: 20px 0">
+            <p style="font-size:1.1em;font-weight:bold;padding:0; margin:0">Daniel has...</p>
+            <p style="font-size:2em;padding:0; margin:0">Walked the moon</p>
+        </div>
+    </div>
     
-    <h1>{% trans "Välkommen till DareToDo" %}</h1>
+    <h1>Welcome to <em>daretodo.it</em></h1>
     
     <p>
-        {% blocktrans %}
-        <b>DareToDo</b> är en sida bla bla bla.
-        {% endblocktrans %}
+        <em>Daretodo.it</em> is a social website where you can share your personal real life achievements with your friends and the rest of the world.
     </p>
         
-    <h2>{% trans "About this project" %}</h2>
-    
-    <p>
-        {% blocktrans %}
-        This project comes with the bare minimum set of applications and
-        templates to get you started. It includes no extra tabs, only the
-        profile and notices tabs are included by default. From here you can
-        add any extra functionality and applications that you would like.
-        {% endblocktrans %}
-    </p>
     
     {% if user.is_authenticated %}
     {% else %}
