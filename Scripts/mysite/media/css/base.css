@@ -39,9 +39,9 @@ h1 {
 #body {
     clear: both;
     margin: 0 auto;
-    padding: 5px 22px;
+    padding: 5px 32px;
     padding-bottom: 50px;
-    width: 776px;
+    width: 756px;
     background: #fff url('../img/shadow_body_bg2.png') no-repeat;
 }
 #footer {

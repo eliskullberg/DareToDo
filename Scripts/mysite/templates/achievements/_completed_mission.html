@@ -6,7 +6,7 @@
     <span class="points">{{ mission.points }} points</span>
 
     <div class="options" onclick="return false">
-        <span>Klicka på knappen nedan för att ångra denna bedrift.</span>
+        <p>Click the button below to undo marking achievement as done.</p>
         <input type="button" onclick="undo_completed('#mission_container_{{ mission.id }}', {{ mission.id }})" value="Ooops... Made a mistake!" />
     </div>
 
